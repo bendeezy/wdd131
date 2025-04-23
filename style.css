@@ -1,0 +1,38 @@
+/* style.css */
+:root {
+    font-family: system-ui, sans-serif;
+    line-height: 1.6;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    color: #222;
+  }
+  
+  header {
+    background: #005b99;
+    color: white;
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 1.75rem;
+  }
+  
+  main {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  footer {
+    background: #eee;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.875rem;
+  }
+  
