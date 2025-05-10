@@ -1,0 +1,35 @@
+/* Base (light) theme styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 1rem;
+    background-color: white;
+    color: black;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  #themeSelector {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+  }
+  
+  #logo {
+    width: 150px;
+    margin-top: 1rem;
+  }
+  
+  /* Dark theme styles */
+  .dark {
+    background-color: #333;
+    color: white;
+  }
+  
+  .dark h2 {
+    color: #66B1E3; 
+  }
+  

@@ -1,49 +1,28 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- −− Required meta tags −− -->
-  <meta charset="utf-8">
-
-  <!-- Keep the title short and meaningful -->
-  <title>Bernard Ndego – WDD 131 Portfolio</title>
-
-  <!-- Description: 155 chars or fewer is SEO‑friendly -->
-  <meta name="description" content="Course portfolio for WDD 131: Front‑end Web Development. Projects, labs, and reflections by Bernard Ndego.">
-
-  <!-- Author -->
-  <meta name="author" content="Bernard Ndego">
-
-  <!-- Link to your stylesheet -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Theme Switcher</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <header>
-    <h1>Bernard Ndego: WDD 131 Portfolio</h1>
+    <select id="themeSelector">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+    <img id="logo" src="byui-logo-blue.png" alt="BYUI Logo">
+    <h1>Welcome to BYUI!</h1>
+    <h2>Learning to Switch Themes</h2>
   </header>
 
   <main>
-    <p>Welcome! This page will showcase all of my WDD 131 work—projects, labs, and experiments—throughout the semester. Check back as it evolves.</p>
-
-    <!-- As you build new assignments, add links here -->
-    <section aria-labelledby="projects">
-      <h2 id="projects">Projects</h2>
-      <ul>
-        <li><!-- Example placeholder -->
-          <a href="#">Project 1 – Coming soon</a>
-        </li>
-      </ul>
-    </section>
+    <p>This is an example page to demonstrate light and dark theme switching using JavaScript and CSS.</p>
   </main>
-
-  <footer>
-    <p>&copy; <span id="year"></span> Bernard Ndego • WDD 131 • Brigham Young University – Idaho</p>
-  </footer>
-
-  <!-- (Optional) tiny script to keep the year current -->
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<!-- https://github.com/bendeezy99/WDD131.git -->
+  <script src="mission.js" defer></script>
 </body>
 </html>
+
+ 
