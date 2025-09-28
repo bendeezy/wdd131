@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>BYU-Idaho Mission</title>
-    <meta name="description" content="The mission of Brigham Young University–Idaho is to develop disciples of Jesus Christ who are leaders in their homes, the Church, and their communities.">
-    <meta: name="author" content="Bernard Ndego">
+  <title>BYU-Idaho Mission</title>
+  <meta name="description" content="The mission of Brigham Young University–Idaho is to develop disciples of Jesus Christ who are leaders in their homes, the Church, and their communities.">
+  <meta name="author" content="Bernard Ndego">
 
-    <link rel="stylesheet" href="style.css">
-
-    <title>Mission</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
@@ -19,6 +17,13 @@
       <p class="subtitle">Brigham Young University-Idaho</p>
     </div>
   </header>
+
+  <!-- Theme selector -->
+  <label for="theme">Theme: </label>
+  <select id="theme">
+    <option value="light" selected>Light</option>
+    <option value="dark">Dark</option>
+  </select>
 
   <main>
     <section class="container card">
@@ -53,8 +58,11 @@
 
   <footer class="site-footer">
     <div class="container">
-      <img src="byui-logo_blue.png" alt="BYU-Idaho logo" class="logo" />
+      <img id="logo" src="byui-logo_blue.png" alt="BYU-Idaho logo" class="logo" />
     </div>
   </footer>
+
+  
+  <script src="mission.js" defer></script>
 </body>
 </html>

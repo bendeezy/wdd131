@@ -1,35 +1,39 @@
 /* Base settings per assignment */
 html { font-size: 20px; } 
+
 body {
   margin: 0;
-  font-family: "Times New Roman", Times, serif; 
-  line-height: 1.5; 
+  font-size: 20px;
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .container {
-  max-width: 600px;           
-  margin-inline: auto;        
-  padding: 1rem;              
+  max-width: 600px;
+  margin-inline: auto;
+  padding: 1rem;
 }
 
 .title {
   text-align: center;
-  letter-spacing: 0.15em;     
-  text-transform: uppercase;  
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
   margin: 1.5rem 0 0.25rem;
 }
 
 .subtitle {
   text-align: center;
-  color: #006EB6;             
+  color: #006EB6;
   letter-spacing: 0.08em;
   margin: 0 0 1.5rem;
 }
 
 .card {
-  border: 1px solid #dddddd;  
-  padding: 1.5rem;            
-  margin-bottom: 2rem;        
+  border: 1px solid #dddddd;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
   border-radius: 8px;
   background: #fff;
 }
@@ -47,17 +51,38 @@ body {
 }
 
 .card ul {
-  padding-left: 1.25rem;      
+  padding-left: 1.25rem;
   margin: 0.5rem 0 0;
 }
+
 .card li + li { margin-top: 0.5rem; }
 
 .site-footer {
   padding: 1rem 0 2.5rem;
 }
+
 .logo {
   display: block;
-  width: 150px;               
+  width: 150px;
   height: auto;
-  margin: 0 auto;             
+  margin: 0 auto;
+}
+
+/* Dark theme */
+body.dark {
+  background-color: #333;
+  color: #ffffff;
+}
+
+body.dark .subtitle {
+  color: #78BFEA;
+}
+
+body.dark header {
+  background-color: #222;
+}
+
+body.dark .card {
+  background: #444;
+  border-color: #666;
 }
