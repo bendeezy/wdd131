@@ -16,5 +16,5 @@ function changeTheme() {
   }
 }
 
-
+// Run when dropdown changes
 themeSelector.addEventListener('change', changeTheme);
