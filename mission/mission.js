@@ -8,7 +8,7 @@ function changeTheme() {
   const theme = themeSelector.value;
 
   if (theme === 'dark') {
-    body.classList.add('dark'); /
+    body.classList.add('dark'); 
     logo.src = 'byui-logo_white.png'; 
   } else {
     body.classList.remove('dark'); 
