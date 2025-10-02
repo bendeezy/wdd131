@@ -1,0 +1,91 @@
+/* Import Google font */
+@import url("https://fonts.googleapis.com/css2?family=Mooli&display=swap");
+
+/* CSS Variables */
+:root {
+  --primary-color: #52489c;
+  --secondary-color: #59c3c3;
+  --accent-color: #f45b69;
+  --text-dark: #333;
+  --text-light: #ebebeb;
+  --primary-font: Arial, Helvetica, sans-serif;
+  --secondary-font: "Mooli", sans-serif;
+}
+
+/* Global styles */
+body {
+  font-family: var(--primary-font);
+  font-size: 1.2em;
+  margin: 0;
+  color: var(--text-dark);
+}
+
+a:link,
+a:visited {
+  color: var(--accent-color);
+}
+
+header, footer {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  font-family: var(--secondary-font);
+  margin: 0.5rem 0;
+}
+
+#menu {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.gallery img {
+  max-width: 100%;
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 700px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    padding: 0;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
