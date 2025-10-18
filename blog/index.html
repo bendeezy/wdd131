@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Recommended meta -->
+  <title>Book Review Blog | WDD131</title>
+  <meta name="description" content="Short, thoughtful book reviews and notes on what to read next." />
+  <meta name="author" content="Your Name" />
+
+  <!-- Fonts (Lora for headings; Helvetica/Arial for body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./blog.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <h1 class="site-title">Book Review Blog</h1>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="../">Home</a></li>
+          <li aria-current="page"><a href="./">Blog</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav <li><a href="blog/">Book Review Blog</a></li>
+>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <!-- Page heading -->
+    <header class="page-header">
+      <h2>Latest Reviews</h2>
+      <!-- Leave space for the Filter form (to be built next unit) -->
+      <section class="filters" aria-labelledby="filters-title">
+        <h3 id="filters-title" class="sr-only">Filters</h3>
+        <p class="filter-note">Filter form will go here</p>
+      </section>
+    </header>
+
+    <!-- Articles list -->
+    <section class="articles" aria-label="Book review list">
+      <!-- ARTICLE 1 -->
+      <article class="review" aria-labelledby="book-1-title">
+        <header class="review-header">
+          <p class="review-date">
+            <!-- Use <time> for accessibility & machine readability -->
+            <time datetime="2025-10-18" aria-label="Published on October 18, 2025">Oct 18, 2025</time>
+          </p>
+          <h3 id="book-1-title" class="review-title">[Book Title 1]</h3>
+          <p class="review-meta">by <span class="book-author">[Author Name]</span> &middot; <span class="book-genre">[Genre]</span></p>
+        </header>
+
+        <figure class="cover">
+          <img src="https://via.placeholder.com/320x480?text=Cover+Image" alt="Book cover for [Book Title 1]" width="320" height="480" />
+          <figcaption class="sr-only">Cover image for [Book Title 1]</figcaption>
+        </figure>
+
+        <div class="review-body">
+          <p class="summary">
+            [Short summary/intro to the review. Replace this text with details you’ll pull from <code>blog.js</code> in Part 2.]
+          </p>
+
+          <ul class="tags" aria-label="Tags">
+            <li><a href="#" class="tag">[Tag One]</a></li>
+            <li><a href="#" class="tag">[Tag Two]</a></li>
+          </ul>
+        </div>
+
+        <footer class="review-footer">
+          <a class="read-more" href="#">Read full review</a>
+        </footer>
+      </article>
+
+      <!-- ARTICLE 2 -->
+      <article class="review" aria-labelledby="book-2-title">
+        <header class="review-header">
+          <p class="review-date">
+            <time datetime="2025-10-12" aria-label="Published on October 12, 2025">Oct 12, 2025</time>
+          </p>
+          <h3 id="book-2-title" class="review-title">[Book Title 2]</h3>
+          <p class="review-meta">by <span class="book-author">[Author Name]</span> &middot; <span class="book-genre">[Genre]</span></p>
+        </header>
+
+        <figure class="cover">
+          <img src="https://via.placeholder.com/320x480?text=Cover+Image" alt="Book cover for [Book Title 2]" width="320" height="480" />
+          <figcaption class="sr-only">Cover image for [Book Title 2]</figcaption>
+        </figure>
+
+        <div class="review-body">
+          <p class="summary">
+            [Another short summary. In Part 1 you can hardcode content from <code>blog.js</code>. In Part 2, you’ll render it with JavaScript.]
+          </p>
+
+          <ul class="tags" aria-label="Tags">
+            <li><a href="#" class="tag">[Tag One]</a></li>
+            <li><a href="#" class="tag">[Tag Two]</a></li>
+          </ul>
+        </div>
+
+        <footer class="review-footer">
+          <a class="read-more" href="#">Read full review</a>
+        </footer>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; <span id="year"></span> Book Review Blog · WDD131</p>
+    </div>
+  </footer>
+
+  <!-- JS (you’ll use this more in Part 2) -->
+  <script src="./blog.js" defer></script>
+  <script>
+    // tiny enhancement for the footer year
+    document.addEventListener('DOMContentLoaded', () => {
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
