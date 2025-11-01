@@ -1,0 +1,186 @@
+:root{
+  --bg: #0f172a;           /* slate-900 */
+  --card: #111827;         /* gray-900 */
+  --card-2: #0b1220;       /* darker */
+  --ink: #e5e7eb;          /* gray-200 */
+  --muted: #9ca3af;        /* gray-400 */
+  --accent: #f59e0b;       /* amber-500 */
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background: radial-gradient(60% 60% at 50% 30%, #172554 0%, #0b1022 100%);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.4;
+}
+
+.wrap{
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+h1{
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.card-form{
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* -------- Main Grid: overlap front/back + place button -------- */
+.card-stack{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 260px;
+  position: relative;
+}
+
+/* Cards share visuals */
+.card{
+  border-radius: var(--radius);
+  background: linear-gradient(165deg, var(--card) 0%, var(--card-2) 100%);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+/* BACK sits behind, slightly offset */
+.card--back{
+  z-index: 1;
+  transform: translate(40px, 22px);
+  padding: 18px;
+}
+
+/* FRONT on top */
+.card--front{
+  z-index: 2;
+  padding: 18px;
+}
+
+/* Front inner grid */
+.front-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr;
+  gap: 12px;
+  height: 100%;
+  padding: 8px;
+}
+
+/* Brand image sits top-right */
+.brand{
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Back inner grid */
+.back-grid{
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  grid-template-rows: 1fr;
+  gap: 12px;
+  align-items: end;
+  height: 100%;
+  padding: 8px;
+}
+
+/* Decorative elements on back */
+.magstripe{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 22px;
+  height: 50px;
+  background: #333a52;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+
+.sig-panel{
+  background: #f4f6f8;
+  height: 44px;
+  border-radius: 6px;
+  border: 1px solid #c7ccd1;
+  opacity: .9;
+  margin-right: 12px;
+}
+
+/* Form fields */
+.field-row{
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 12px;
+}
+
+.field-group{
+  display: grid;
+  gap: 6px;
+}
+
+label{
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+input{
+  appearance: none;
+  width: 100%;
+  padding: .75rem .9rem;
+  font-size: 1rem;
+  color: var(--ink);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s, background-color .2s;
+}
+
+input::placeholder{ color: #94a3b8; }
+
+input:focus{
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(245,158,11,.25);
+  background: rgba(255,255,255,0.09);
+}
+
+.help{
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+/* Positioning inside cards */
+.number-group{ margin-top: 10px; }
+.exp-group input{ text-align: center; }
+.cvv-group input{ text-align: center; }
+
+/* Submit */
+.submit-btn{
+  justify-self: start;
+  padding: .9rem 1.25rem;
+  border-radius: 12px;
+  border: 0;
+  background: linear-gradient(180deg, #f59e0b, #b45309);
+  color: #111827;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform .06s ease, filter .2s ease;
+}
+
+.submit-btn:hover{ filter: brightness(1.05); }
+.submit-btn:active{ transform: translateY(1px); }
+
+/* Responsive tweak: tighter offset on narrow screens */
+@media (max-width: 520px){
+  .card-stack{ grid-template-rows: 240px; }
+  .card--back{ transform: translate(26px, 18px); }
+  .field-row{ grid-template-columns: 1fr; }
+  .back-grid{ grid-template-columns: 1fr; }
+}
