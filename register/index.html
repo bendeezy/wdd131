@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Meta (don’t forget to replace description/author) -->
+  <meta charset="utf-8" />
+  <title>Community Event Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Register participants for the community event." />
+  <meta name="author" content="Bernard Ndego" />
+
+  <!-- Favicon (replace path with your icon if you have one) -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./register.css" />
+
+  <!-- JS -->
+  <script defer src="./register.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Register for the Community Event</h1>
+    <p class="subtitle">Add participants, review fees, and submit.</p>
+  </header>
+
+  <main class="page">
+    <!-- Summary (hidden until success) -->
+    <section id="summary" class="card hide" aria-live="polite"></section>
+
+    <!-- FORM -->
+    <form id="register-form" class="card" novalidate>
+      <fieldset>
+        <legend>Adult Contact</legend>
+        <div class="grid-2">
+          <label for="adult-name">
+            Adult full name
+            <input id="adult-name" name="adultName" type="text" required placeholder="e.g., Ama Serwaa" />
+          </label>
+
+          <label for="adult-email">
+            Email
+            <input id="adult-email" name="adultEmail" type="email" required placeholder="e.g., ama@example.com" />
+          </label>
+
+          <label for="adult-phone">
+            Phone
+            <input id="adult-phone" name="adultPhone" type="tel" required placeholder="e.g., +233 55 123 4567" />
+          </label>
+
+          <fieldset class="inline-fieldset">
+            <legend>Preferred contact method</legend>
+            <label class="radio-pill">
+              <input type="radio" name="contactMethod" id="contact-email" value="email" checked />
+              <span>Email</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="contactMethod" id="contact-phone" value="phone" />
+              <span>Phone</span>
+            </label>
+          </fieldset>
+        </div>
+      </fieldset>
+
+      <fieldset id="participants">
+        <legend>Participants</legend>
+
+        <!-- Participant 1 (initial block) -->
+        <section class="participant participant1" aria-label="Participant 1">
+          <h3>Participant 1</h3>
+          <div class="grid-2">
+            <label for="pname1">
+              Full name
+              <input id="pname1" name="participantName[]" type="text" required placeholder="e.g., Kojo Mensah" />
+            </label>
+
+            <label for="age1">
+              Age
+              <input id="age1" name="participantAge[]" type="number" min="0" inputmode="numeric" placeholder="e.g., 12" />
+            </label>
+
+            <fieldset class="inline-fieldset">
+              <legend>T-shirt size</legend>
+              <label class="radio-pill">
+                <input type="radio" name="size1" id="size-s1" value="S" checked />
+                <span>S</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="size1" id="size-m1" value="M" />
+                <span>M</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="size1" id="size-l1" value="L" />
+                <span>L</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="size1" id="size-xl1" value="XL" />
+                <span>XL</span>
+              </label>
+            </fieldset>
+
+            <label for="fee1">
+              Fee (USD)
+              <input id="fee1" name="participantFee[]" type="number" min="0" step="0.01" placeholder="e.g., 25.00" />
+            </label>
+          </div>
+        </section>
+
+        <!-- Add participant button (new sections insert before this) -->
+        <button type="button" id="add-participant" class="btn btn-secondary">
+          + Add another participant
+        </button>
+      </fieldset>
+
+      <div class="actions">
+        <button type="submit" class="btn btn-primary">Submit Registration</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <small>&copy; <span id="year"></span> Community Event</small>
+  </footer>
+</body>
+</html>
