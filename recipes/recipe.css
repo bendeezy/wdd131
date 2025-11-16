@@ -1,0 +1,275 @@
+/* recipes.css */
+
+/* Custom properties and global styles */
+:root {
+  --primary-color: #1b98e0;
+  --secondary-color: #59c3c3;
+  --text-dark: #333;
+  --text-light: #f7f7f7;
+  --primary-font: Arial, Helvetica, sans-serif;
+  --secondary-font: "Kalam", cursive;
+  --max-width: 960px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--primary-font);
+  color: var(--text-dark);
+  background-color: #fff;
+}
+
+/* Helpful utility for visually hidden labels */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Layout containers */
+header,
+main,
+footer {
+  padding: 1rem;
+}
+
+.header-inner,
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Logo + title */
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-title img {
+  width: 48px;
+  height: 48px;
+}
+
+.logo-title h1 {
+  margin: 0;
+  font-family: var(--secondary-font);
+  font-size: 2.5rem;
+  letter-spacing: 0.05em;
+}
+
+/* Search form */
+.search {
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.search input[type="search"] {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.search button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: var(--secondary-color);
+  color: var(--text-dark);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.search button:hover {
+  filter: brightness(0.95);
+}
+
+/* Main */
+main {
+  max-width: var(--max-width);
+  margin: 1.5rem auto;
+}
+
+/* Recipe list and cards */
+.recipe-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.recipe {
+  background-color: var(--text-light);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.recipe-content {
+  padding: 1rem;
+}
+
+.recipe-header h2 {
+  margin: 0 0 0.5rem;
+  font-family: var(--secondary-font);
+  font-size: 2rem;
+}
+
+.recipe-meta {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.recipe-tags {
+  background-color: #fff;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+}
+
+/* Rating */
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.1rem;
+  font-size: 1.1rem;
+}
+
+.icon-star {
+  color: #f4b400; /* yellow-ish */
+}
+
+.icon-star-empty {
+  color: #ccc;
+}
+
+/* Description: hidden on small screens */
+.recipe-description {
+  margin-top: 0.75rem;
+  line-height: 1.4;
+  display: none;
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: var(--text-light);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.attribution {
+  font-size: 0.6em; /* per instructions: make it small */
+  margin: 0;
+}
+
+.attribution a {
+  color: var(--text-light);
+}
+
+.social {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social img {
+  width: 24px;
+  height: 24px;
+}
+
+/* =========================
+   Media Queries
+   ========================= */
+
+/* ~600px: header layout & recipe card layout side-by-side */
+@media (min-width: 600px) {
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .recipe {
+    flex-direction: row;
+  }
+
+  .recipe-image {
+    flex: 0 0 40%;
+  }
+
+  .recipe-content {
+    flex: 1;
+  }
+
+  /* Show description from this size up */
+  .recipe-description {
+    display: block;
+  }
+
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* ~960px: prevent the layout from stretching too wide */
+@media (min-width: 960px) {
+  header,
+  main,
+  footer {
+    display: flex;
+    justify-content: center;
+  }
+
+  header > .header-inner,
+  main > .recipe-list,
+  footer > .footer-inner {
+    width: 100%;
+    max-width: var(--max-width);
+  }
+}

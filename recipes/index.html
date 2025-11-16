@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required metadata -->
+  <meta charset="UTF-8">
+  <title>Recipe Book | WDD 131</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A simple, responsive recipe book with quick, tasty meals.">
+  <meta name="author" content="Your Name">
+
+  <!-- Favicon (you can change to another image if you like) -->
+  <link rel="icon" href="images/recipe-book.png" type="image/png">
+
+  <!-- Google font for headings (similar feel to Amatic SC but more readable) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Social Media / Open Graph meta -->
+  <meta property="og:title" content="Recipe Book | WDD 131">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Browse simple, delicious recipes in this responsive recipe book.">
+  <!-- When you know your real URL, update these two: -->
+  <meta property="og:image" content="https://githubusername.github.io/wdd131/recipes/images/recipe-book.png">
+  <meta property="og:url" content="https://githubusername.github.io/wdd131/recipes/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="recipes.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo-title">
+        <img src="images/recipe-book.png" alt="Recipe book logo">
+        <h1>Recipe Book</h1>
+      </div>
+
+      <!-- Search form -->
+      <form id="search-form" class="search">
+        <label for="search" class="visually-hidden">Search recipes</label>
+        <input
+          id="search"
+          name="search"
+          type="search"
+          placeholder="Search by name or tag"
+        >
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <main>
+    <!-- Recipe list will be rendered here by main.js -->
+    <section id="recipes" class="recipe-list">
+      <!-- JS will inject <article class="recipe"> cards here -->
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p class="attribution">
+        <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">
+          Recipe icons created by Freepik - Flaticon
+        </a>
+      </p>
+
+      <div class="social">
+        <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
+        <a href="#" aria-label="Instagram">
+          <img src="images/instagram_icon.svg" alt="instagram icon">
+        </a>
+        <a href="#" aria-label="YouTube">
+          <img src="images/youtube_icon.svg" alt="youtube icon">
+        </a>
+        <a href="#" aria-label="Pinterest">
+          <img src="images/pinterest_icon.svg" alt="pinterest icon">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JS (module) -->
+  <script type="module" src="main.js"></script>
+</body>
+</html>
